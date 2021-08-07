@@ -1,0 +1,34 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif !important;
+}
+
+html ::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-image: url("./img/bg1.jpg");
+  background-size: cover;
+  background-position-x: center;
+}
+
+header {
+  width: 100%;
+  height: 320px;
+  background: #ec9eaa;
+  color: #fff;
+}
+.image {
+  width: 50%;
+  margin: 0 auto;
+  height: 310px;
+}
+.image > img {
+  width: 100%;
+  height: 100%;
+}
