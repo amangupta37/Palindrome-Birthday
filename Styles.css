@@ -140,7 +140,7 @@ footer {
 }
 
 .resultBox {
-  /* display: none; */
+  display: none;
   width: 90%;
   height: 110px;
   margin: 0 auto;
