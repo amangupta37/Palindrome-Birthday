@@ -1,4 +1,8 @@
 const userBirthday = document.getElementById("userBirthday");
+const CheckBtn = document.getElementById("btn");
+const displayResult = document.getElementById("DisplayResult");
+const displayResultBox = document.getElementById("displayresultBox");
+let userInputDate, convertIntoNumber;
 
 const check_MMDDYYY_fromate = (dd_mm_yyy_DOB, userRawDOB) => {
   //mmddyy
@@ -12,6 +16,8 @@ const check_MMDDYYY_fromate = (dd_mm_yyy_DOB, userRawDOB) => {
   } else {
     console.log("not palind");
     console.log(userRawDOB);
+    displayResultBox.style.display = "block";
+    displayResult.innerHTML = ` Awww! Your birthdate ${userRawDOB} is not palindrome.`;
   }
 };
 
@@ -33,8 +39,8 @@ const checkPalindrome = (dd_mm_yyy_DOB, userRawDOB) => {
   }
 
   if (dd_mm_yyy_DOB === reverseNum) {
-    console.log("Your Birthday is a Palindrome");
-    console.log(userRawDOB);
+    displayResultBox.style.display = "block";
+    displayResult.innerHTML = ` Congo ! Your birthdate ${userRawDOB} is a Palindrome.`;
   } else {
     check_MMDDYYY_fromate(dd_mm_yyy_DOB, userRawDOB);
   }
@@ -44,5 +50,14 @@ userBirthday.addEventListener("change", (e) => {
   const userInput = e.target.value;
   const convertFormate = userInput.split("-").reverse().join("");
   const toNumber = parseInt(convertFormate);
-  checkPalindrome(toNumber, userInput);
+  userInputDate = userInput;
+  convertIntoNumber = toNumber;
+});
+
+CheckBtn.addEventListener("click", () => {
+  if (userInputDate) {
+    checkPalindrome(convertIntoNumber, userInputDate);
+  } else {
+    alert("Enter Valid Input");
+  }
 });
