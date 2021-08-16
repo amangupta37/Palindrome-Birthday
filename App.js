@@ -14,15 +14,12 @@ const check_MMDDYYY_fromate = (dd_mm_yyy_DOB, userRawDOB) => {
   if (dd_mm_yyy_DOB !== mm_dd_yyy_DOB) {
     checkPalindrome(mm_dd_yyy_DOB, userRawDOB);
   } else {
-    console.log("not palind");
-    console.log(userRawDOB);
     displayResultBox.style.display = "block";
     displayResult.innerHTML = ` Awww! Your birthdate ${userRawDOB} is not palindrome.`;
   }
 };
 
 const checkPalindrome = (dd_mm_yyy_DOB, userRawDOB) => {
-  console.log(dd_mm_yyy_DOB);
   let num = dd_mm_yyy_DOB;
   let reverseNum = 0;
 
